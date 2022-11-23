@@ -1,7 +1,7 @@
 package com.enesk.basicoutsideintdd.acceptancetests
 
 import com.enesk.basicoutsideintdd.Car
-import junit.framework.Assert.assertEquals
+import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
 class CarFeature {
