@@ -1,6 +1,7 @@
 package com.enesk.basicoutsideintdd.acceptancetests
 
 import com.enesk.basicoutsideintdd.Car
+import com.enesk.basicoutsideintdd.Engine
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
@@ -8,7 +9,7 @@ import org.junit.Test
 class CarFeature {
 
     /*private val engine = Engine()
-    private val car = Car(6.0, engine)
+    private val car = Car(engine,6.0)
 
     @Test
     fun carIsLoosingFuelWhenItTurnOn() {
