@@ -5,6 +5,7 @@ import com.example.outsideintddexample.acceptancetests.MainCoroutineScopeRule
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertTrue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
@@ -24,8 +25,9 @@ class EngineShould {
     }
 
     @Test
-    fun riseTheTemperatureWhenItTurnsOn() = runTest {
-        engine.turnOn()
-        assertEquals(95, engine.temperature)
+    fun riseTheTemperatureGraduallyWhenItTurnsOn() = runTest {
+        val flow = engine.turnOn()
+        val actual = flow.toList()
+        assertEquals(listOf(25,50,95), actual)
     }
 }

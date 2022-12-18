@@ -27,12 +27,18 @@ class CarFeature {
     }
 
     @Test
-    fun carIsTurningOnItsEngineAndIncreasesTheTemperature() = runTest {
+    fun carIsTurningOnItsEngineAndIncreasesTheTemperatureGradually() = runTest {
         car.turnOn()
 
-        delay(6000)
+        delay(2000)
+        assertEquals(25, car.engine.temperature)
 
+        delay(2000)
+        assertEquals(50, car.engine.temperature)
+
+        delay(2000)
         assertEquals(95, car.engine.temperature)
+
         assertTrue(car.engine.isTurnedOn)
     }
 }
